@@ -1,9 +1,9 @@
 server:
-    port: 5001
+    port: 6001
 spring:
     application:
         name: ms-estudiantes
     cloud:
         config:
             enabled: true
-            uri: https://localhost:5000
+            uri: https://localhost:6000
