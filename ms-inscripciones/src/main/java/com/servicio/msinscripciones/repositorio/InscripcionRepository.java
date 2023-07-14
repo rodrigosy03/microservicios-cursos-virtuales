@@ -9,6 +9,6 @@ import com.servicio.msinscripciones.entidades.Inscripcion;
 
 @Repository
 public interface InscripcionRepository extends JpaRepository<Inscripcion, Integer> {
-    List<Inscripcion> getPorEstudiante(int idEstudiante);
-    List<Inscripcion> getPorCurso(int idCurso);
+    List<Inscripcion> findByEstudianteId(int estudianteId);
+    List<Inscripcion> findByCursoId(int cursoId);
 }

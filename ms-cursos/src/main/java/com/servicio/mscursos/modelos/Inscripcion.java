@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class Inscripcion {
-    private int idEstudiante;
+    private int estudianteId;
+    private int cursoId;
 }

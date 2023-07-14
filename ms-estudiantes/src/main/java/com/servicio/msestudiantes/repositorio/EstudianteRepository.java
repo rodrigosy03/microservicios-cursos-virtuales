@@ -7,5 +7,4 @@ import com.servicio.msestudiantes.entidades.Estudiante;
 
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Integer> {
-    
 }

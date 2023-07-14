@@ -12,8 +12,12 @@ import lombok.Data;
 public class Inscripcion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idInscripcion;
+    private int id;
 
-    private int idEstudiante;
-    private int idCurso;
+    private int estudianteId;
+    private int cursoId;
+
+    public Inscripcion() {
+        super();
+    }
 }

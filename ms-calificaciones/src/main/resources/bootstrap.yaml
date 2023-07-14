@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: ms-calificaciones
+    cloud:
+        config:
+            enabled: true
+            uri: https://localhost:5003

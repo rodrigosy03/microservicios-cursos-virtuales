@@ -50,27 +50,36 @@ public class EstudianteController {
         return ResponseEntity.ok(nuevoEstudiante);
     }
 
+    // Usando RestTemplate
     @GetMapping("/inscripciones/{idEstudiante}")
-    public ResponseEntity<List<Inscripcion>> listarInscripcionesDelEstudiante(@PathVariable("idEstudiante") int idEstudiante) {
-        Estudiante estudiante = estudianteService.getEstudiantePorId(idEstudiante);
+    public ResponseEntity<List<Inscripcion>> listarInscripcionesDelEstudiante(@PathVariable("idEstudiante") int id) {
+        Estudiante estudiante = estudianteService.getEstudiantePorId(id);
 
         if (estudiante == null) {
             return ResponseEntity.notFound().build();
         }
 
-        List<Inscripcion> inscripciones = estudianteService.getInscripcionesDelEstudiante(idEstudiante);
+        List<Inscripcion> inscripciones = estudianteService.getInscripcionesDelEstudiante(id);
         return ResponseEntity.ok(inscripciones);
     }
 
     @GetMapping("/calificaciones/{idEstudiante}")
-    public ResponseEntity<List<Calificacion>> listarCalificacionesDelEstudiante(@PathVariable("idEstudiante") int idEstudiante) {
-        Estudiante estudiante = estudianteService.getEstudiantePorId(idEstudiante);
+    public ResponseEntity<List<Calificacion>> listarCalificacionesDelEstudiante(@PathVariable("idEstudiante") int id) {
+        Estudiante estudiante = estudianteService.getEstudiantePorId(id);
 
         if (estudiante == null) {
             return ResponseEntity.notFound().build();
         }
 
-        List<Calificacion> calificaciones = estudianteService.getCalificacionesDelEstudiante(idEstudiante);
+        List<Calificacion> calificaciones = estudianteService.getCalificacionesDelEstudiante(id);
         return ResponseEntity.ok(calificaciones);
     }
+
+    // Usando FeignClient
+    // @PostMapping("crear/calificacion/{estudianteId}")
+    // public ResponseEntity<Calificacion> guardarCalificacion(@PathVariable("estudianteId") int estudianteId, @RequestBody Calificacion calificacion) {
+    //     Calificacion nuevaCalificacion = estudianteService.saveCalificacion(estudianteId, calificacion);
+        
+    //     return ResponseEntity.ok(nuevaCalificacion);
+    // }
 }

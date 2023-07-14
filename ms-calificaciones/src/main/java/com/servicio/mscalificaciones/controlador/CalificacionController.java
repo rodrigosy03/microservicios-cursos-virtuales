@@ -31,8 +31,8 @@ public class CalificacionController {
         return ResponseEntity.ok(calificaciones);
     }
 
-    @GetMapping("listar/{id}")
-    public ResponseEntity<Calificacion> obtenerCalificacion(@PathVariable("id") int id) {
+    @GetMapping("listar/{idEstudiante}")
+    public ResponseEntity<Calificacion> obtenerCalificacion(@PathVariable("idEstudiante") int id) {
         Calificacion calificacion = calificacionService.getCalificacionPorId(id);
 
         if (calificacion == null) {
@@ -49,8 +49,8 @@ public class CalificacionController {
     }
 
     @GetMapping("/estudiante/{idEstudiante}")
-    public ResponseEntity<List<Calificacion>> listarCalificacionesPorEstudiante(@PathVariable("idEstudiante") int idEstudiante) {
-        List<Calificacion> calificaciones = calificacionService.getPorEstudiante(idEstudiante);
+    public ResponseEntity<List<Calificacion>> listarCalificacionesPorEstudiante(@PathVariable("idEstudiante") int id) {
+        List<Calificacion> calificaciones = calificacionService.getPorEstudiante(id);
 
         if (calificaciones.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -60,8 +60,8 @@ public class CalificacionController {
     }
 
     @GetMapping("/curso/{idCurso}")
-    public ResponseEntity<List<Calificacion>> listarCalificacionesPorCurso(@PathVariable("idCurso") int idCurso) {
-        List<Calificacion> calificaciones = calificacionService.getPorCurso(idCurso);
+    public ResponseEntity<List<Calificacion>> listarCalificacionesPorCurso(@PathVariable("idCurso") int id) {
+        List<Calificacion> calificaciones = calificacionService.getPorCurso(id);
 
         if (calificaciones.isEmpty()) {
             return ResponseEntity.noContent().build();

@@ -9,5 +9,4 @@ import com.servicio.mscursos.entidades.Curso;
 
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Integer> {
-    List<Curso> getPorProfesor(int idProfesor);
 }

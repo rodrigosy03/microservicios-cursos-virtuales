@@ -26,10 +26,10 @@ public class CalificacionService {
     }
 
     public List<Calificacion> getPorEstudiante(int idEstudiante) {
-        return calificacionRepository.getPorEstudiante(idEstudiante);
+        return calificacionRepository.findByEstudianteId(idEstudiante);
     }
 
     public List<Calificacion> getPorCurso(int idCurso) {
-        return calificacionRepository.getPorCurso(idCurso);
+        return calificacionRepository.findByCursoId(idCurso);
     }
 }

@@ -50,38 +50,27 @@ public class CursoController {
         return ResponseEntity.ok(nuevoCurso);
     }
 
-    @GetMapping("/profesor/{idProfesor}")
-    public ResponseEntity<List<Curso>> listarCursosPorProfesor(@PathVariable("idProfesor") int id) {
-        List<Curso> cursos = cursoService.getPorProfesor(id);
-
-        if (cursos.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-
-        return ResponseEntity.ok(cursos);
-    }
-
     @GetMapping("/calificaciones/{idCurso}")
-    public ResponseEntity<List<Calificacion>> listarCalificacionesDelCurso(@PathVariable("idCurso") int idCurso) {
-        Curso curso = cursoService.getCursoPorId(idCurso);
+    public ResponseEntity<List<Calificacion>> listarCalificacionesDelCurso(@PathVariable("idCurso") int id) {
+        Curso curso = cursoService.getCursoPorId(id);
 
         if (curso == null) {
             return ResponseEntity.notFound().build();
         }
 
-        List<Calificacion> calificaciones = cursoService.getCalificacionesDelCurso(idCurso);
+        List<Calificacion> calificaciones = cursoService.getCalificacionesDelCurso(id);
         return ResponseEntity.ok(calificaciones);
     }
 
     @GetMapping("/inscripciones/{idCurso}")
-    public ResponseEntity<List<Inscripcion>> listarInscripcionesDelCurso(@PathVariable("idCurso") int idCurso) {
-        Curso curso = cursoService.getCursoPorId(idCurso);
+    public ResponseEntity<List<Inscripcion>> listarInscripcionesDelCurso(@PathVariable("idCurso") int id) {
+        Curso curso = cursoService.getCursoPorId(id);
 
         if (curso == null) {
             return ResponseEntity.notFound().build();
         }
 
-        List<Inscripcion> inscripciones = cursoService.getInscripcionesDelCurso(idCurso);
+        List<Inscripcion> inscripciones = cursoService.getInscripcionesDelCurso(id);
         return ResponseEntity.ok(inscripciones);
     }
 }

@@ -12,9 +12,13 @@ import lombok.Data;
 public class Calificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCalificacion;
+    private int id;
 
     private float nota;
-    private int idEstudiante;
-    private int idCurso;
+    private int estudianteId;
+    private int cursoId;
+
+    public Calificacion() {
+        super();
+    }
 }

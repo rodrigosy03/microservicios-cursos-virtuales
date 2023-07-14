@@ -5,5 +5,10 @@ import lombok.Data;
 @Data
 public class Calificacion {
     private float nota;
-    private int idCurso;
+    private int cursoId;
+    private int estudianteId;
+
+    public Calificacion(){
+        super();
+    }
 }

@@ -31,18 +31,14 @@ public class CursoService {
         return cursoNuevo;
     }
 
-    public List<Curso> getPorProfesor(int idProfesor) {
-        return cursoRepository.getPorProfesor(idProfesor);
-    }
-
     public List<Calificacion> getCalificacionesDelCurso(int idCurso) { 
-        List<Calificacion> calificaciones = restTemplate.getForObject("http://localhost:8005/calificaciones/curso/" + idCurso, List.class);
+        List<Calificacion> calificaciones = restTemplate.getForObject("http://localhost:5003/calificaciones/curso/" + idCurso, List.class);
         
         return calificaciones;
     }
 
     public List<Inscripcion> getInscripcionesDelCurso(int idCurso) { 
-        List<Inscripcion> inscripciones = restTemplate.getForObject("http://localhost:8004/inscripciones/curso/" + idCurso, List.class);
+        List<Inscripcion> inscripciones = restTemplate.getForObject("http://localhost:5004/inscripciones/curso/" + idCurso, List.class);
         
         return inscripciones;
     }

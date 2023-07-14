@@ -26,10 +26,10 @@ public class InscripcionService {
     }
 
     public List<Inscripcion> getPorEstudiante(int idEstudiante) {
-        return inscripcionRepository.getPorEstudiante(idEstudiante);
+        return inscripcionRepository.findByEstudianteId(idEstudiante);
     }
 
     public List<Inscripcion> getPorCurso(int idCurso) {
-        return inscripcionRepository.getPorCurso(idCurso);
+        return inscripcionRepository.findByCursoId(idCurso);
     }
 }

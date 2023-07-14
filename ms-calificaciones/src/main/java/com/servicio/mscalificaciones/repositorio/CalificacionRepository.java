@@ -9,6 +9,6 @@ import com.servicio.mscalificaciones.entidades.Calificacion;
 
 @Repository
 public interface CalificacionRepository extends JpaRepository<Calificacion, Integer> {
-    List<Calificacion> getPorEstudiante(int idEstudiante);
-    List<Calificacion> getPorCurso(int idCurso);
+    List<Calificacion> findByEstudianteId(int estudianteId);
+    List<Calificacion> findByCursoId(int cursoId);
 }
